@@ -1,6 +1,8 @@
+## Two functions to demonstrate lexical scoping rules via cached objects
+
 ##  makeCacheMatrix:  Creates a cache for a matrix and and its computed inverse, along 
-##    with get and set functions for each.  Uses scoped assignment to maintain state across
-##    closures. Does not compute the inverse automatically; it relies on the caller for that.
+##  with get() and set() functions for each.  Uses scoped assignment to maintain state across
+##  closures. Does not compute the inverse automatically; it relies on the caller for that.
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
@@ -13,8 +15,6 @@ makeCacheMatrix <- function(x = matrix()) {
         getinverse <- function() inv
         list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
-
-
 
 ##  cacheSolve:  A quick function on an (already-invoked) cached matrix that
 ##    A.) Checks if the inverse has already been calcuated, returning it (exiting) if so 
